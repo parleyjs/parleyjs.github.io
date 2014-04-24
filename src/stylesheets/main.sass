@@ -1,0 +1,94 @@
+/* Authored Dependencies */
+@import global/normalize
+@import global/mixins
+@import global/variables
+@import global/lists
+@import global/typography
+
+
+
+
+/*wrapper*/
+.container
+  margin: 0
+  padding: 0
+  width: 100%
+  display: flex
+  flex-direction: column
+  background: $white
+  @media only screen and (min-width: 64.000rem) 
+    flex-direction: row
+.border
+  background: $border-blue-color
+  bottom: 0
+  height: .75rem
+  width: 100%
+  z-index: 90002
+  position: fixed
+  
+nav.mobile
+  margin: 0
+  padding: 0
+  display: flex
+  flex-direction: column
+  
+/* Sections */
+/*Header*/
+header
+  width: 100%
+  display: flex
+  justify-content: center
+  .toggle-mobile
+    position: absolute
+    top: 2rem
+    right: 2rem
+    color: $gray
+    font-style: italic
+    cursor: pointer
+  
+  .logo
+    img
+      padding: 3.875rem 1.875rem 1.25rem
+    
+  
+
+/* nav and sidebar*/
+section.mobile
+  margin: 0
+  padding: 0
+  min-width: 100%
+  background: $bg-gray
+  display: flex
+  flex-direction: column
+  @media only screen and (min-width: 64.000rem) 
+    display: none
+  
+nav.mobile
+  ul
+    display: flex
+    flex-direction: column
+    width: 100%
+    padding: 0
+    li
+      display: flex
+      justify-content: center
+      width: 100%
+      border-top: 1px solid $gray
+      &:nth-child(1)
+        border: none
+      
+      a
+        font-family: "Wigrum Regular", Arial, Helvetica, sans-serif
+        font-weight: 500
+        font-style: normal
+        letter-spacing: .25rem
+        color: $gray
+        font-size: 1.125rem
+        text-transform: uppercase
+        padding: 1rem 0
+        cursor: pointer
+    
+   
+ 
+/*main section*/
+

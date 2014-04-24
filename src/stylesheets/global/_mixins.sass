@@ -1,0 +1,45 @@
+// buttons
+@mixin button( $background, $color)
+  margin: 40px
+  font-weight: bold
+  padding: 0.75rem 1rem
+  background: $background
+  color: $color
+  font-size: 1rem
+  font-family: $helvetica
+  cursor: pointer
+  text-decoration: none
+  text-shadow: 0 .0125rem 0 rgba(0,0,0,0.15)
+  border-width: 1px 1px 3px 
+  border-style: solid
+  border-color: darken($background, 15)
+  vertical-align: middle
+  border-radius: 5px
+  box-shadow: 0 -0.0125rem 0 rgba(255,255,255,0.1) inset
+  -webkit-transition: background-color 0.25s ease-in-out
+  cursor: pointer
+  &:hover
+    background: darken($background, 5)
+    -webkit-transition: background-color 0.25s ease-in-out
+
+
+    // flash messages
+@mixin flash($color)
+  background: $color
+  color: darken($color, 60)
+  font-weight: bold
+  margin-bottom: $base-line-height / 2
+  padding: $base-line-height / 2
+
+  a 
+    color: darken($color, 70)
+
+    &:hover
+      color: darken($color, 90)
+// transitions
+@mixin transition ($properties...)
+  // Fix for vendor-prefix transform property
+  $needs-prefixes: false
+  $webkit: ()
+  $moz: ()
+  $spec: ()
