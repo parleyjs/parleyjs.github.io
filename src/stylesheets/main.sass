@@ -164,20 +164,24 @@ main.content
   display: flex
   flex-direction: column
   flex: 1
-  padding: 3rem 3.875rem
+  padding: 1.25rem
   @media only screen and (min-width: 64.000rem) 
     margin-left: 17.5rem
+    padding: 3rem
+
   h1
     color: $dark-gray
-    font-size: 4rem
+    font-size: 2.5rem
     font-family: $wigrum
     font-weight: 500
     font-style: normal
+    @media only screen and (min-width: 64.000rem) 
+      font-size: 4rem
     span
-      margin-left: 2rem
+      margin-left: 1rem
       color: $gray
   hr
-    border-bottom: 2px solid $gray
+    border-bottom: 1px dotted $gray
     margin-top: 0
 
 
