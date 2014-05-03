@@ -6,4 +6,7 @@
 
 ## LISTENERS FOR USER INTERACTION WITH PAGE
 $(document).ready ->
-  console.log("Make it Soooooo");
+  $('nav.mobile').hide()
+  $('.toggle-mobile').on "click", ->
+    console.log("you have clicked the menu")
+    $('nav.mobile').toggle()
