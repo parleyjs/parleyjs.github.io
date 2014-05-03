@@ -61,6 +61,12 @@ gulp.task('watch', function () {
 
     gulp.watch('src/stylesheets/*.sass',['compass']);
 
+    gulp.watch('src/stylesheets/*.sass',['compass']);
+
+    gulp.watch('src/stylesheets/global/*.sass',['compass']);
+
+    gulp.watch('src/stylesheets/layouts/*.sass',['compass']);
+
     gulp.watch('src/scripts/*.coffee',['coffee']);
 
     gulp.watch('src/*.jade',['templates']);
