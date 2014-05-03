@@ -5,8 +5,131 @@
 @import global/lists
 @import global/typography
 
+ul
+  margin: 0
+  padding: 0
+
 @import url(http://weloveiconfonts.com/api/?family=entypo)
 
 /* entypo */
 [class*="entypo-"]:before
   font-family: 'entypo', sans-serif
+  /*vars*/
+$header-bg: hsla(240, 1%, 42%, 1)
+$white: hsla(0, 100%, 100%, 1)
+$bg-gray: hsla(0, 0%, 91%, 1)
+$blue:hsla(205, 50%, 47%, 1)
+$gray: hsla(0, 0%, 60%, 1)
+
+/*vars end*/
+body
+  background: $bg-gray
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+  font-weight: 300
+  color: $gray
+header
+  background: $header-bg
+  .wrapper
+    height: 70px
+    margin: 0 auto
+    max-width: 75rem
+  
+@mixin button( $background, $color)
+  font-weight: bold
+  padding: 0.25rem 0.75rem
+  background: $background
+  color: $color
+  font-size: 1rem
+  cursor: pointer
+  text-decoration: none
+  text-shadow: 0 .0125rem 0 rgba(0,0,0,0.15)
+  border-width: 1px 1px 3px 
+  border-style: solid
+  border-color: darken($background, 15)
+  vertical-align: middle
+  border-radius: 5px
+  box-shadow: 0 -0.0125rem 0 rgba(255,255,255,0.1) inset
+  -webkit-transition: background-color 0.25s ease-in-out
+  cursor: pointer
+  &:hover
+    background: darken($background, 5)
+    -webkit-transition: background-color 0.25s ease-in-out
+      
+  
+main
+  padding: 2rem 0
+  display: block
+  margin: 0 auto
+  max-width: 75rem
+
+
+section.group
+  display: flex
+  flex-direction: column
+  width: 100%
+  border-radius: .25rem .25rem 0px 0px
+  border: 1ps solid $gray
+  header.group
+    position: relative
+    height: 250px
+    background: $white url('http://imgs-for.s3.amazonaws.com/cat.jpg') no-repeat center
+    background-size: 100%
+    ul.info
+      position: absolute
+      bottom: .5rem
+      left: 1rem
+      line-height: 2rem
+      list-style: none
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      color: $white
+      font-size: 2rem
+    li.sub
+      font-size: 1rem
+nav.group
+  background: #eee
+  display: flex
+  justify-content: space-between
+  ul
+    list-style: none
+    margin: 0
+    background: #eeeeee
+    display: flex
+    justify-content: flex-start
+    a
+      text-decoration: none
+      display: block
+      padding: .75rem 0
+      margin: 0 .5rem
+      font-size: 1rem
+      border-bottom-style: inset
+      border-bottom: 2px solid #eee
+      span
+        padding: .5rem
+      &:hover
+        cursor: pointer
+      &.active
+        color: darken($header-bg, 50%)
+        border-bottom-style: inset
+        border-bottom: 2px solid $blue
+button.blue
+  @include button($blue, $white)
+
+.info
+  font-size
+    1rem
+
+li.toggle-more
+  position: relative
+  
+#more-info
+  display: flex
+  flex-direction: column
+  position: absolute
+  top: 2.5rem
+  left: 0
+  margin-top: .25rem
+  background-color: $white
+  color: $gray
+  width: 250px

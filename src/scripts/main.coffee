@@ -6,4 +6,8 @@
 
 ## LISTENERS FOR USER INTERACTION WITH PAGE
 $(document).ready ->
-  console.log(" make it soooo");
+  $toggle = $(".toggle-more")
+  $moreInfo = $("#more-info")
+  $moreInfo.hide()
+  $toggle.on "click", ->
+    $moreInfo.fadeToggle('fast')
