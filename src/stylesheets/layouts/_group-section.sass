@@ -1,0 +1,80 @@
+section.group
+  display: flex
+  flex-direction: column
+  width: 100%
+  border: 1px solid #c4c4c4
+  border-radius: .25rem .25rem 0 0
+  margin-bottom: 1rem
+  header.group
+    position: relative
+    height: 250px
+    background: $white url('http://imgs-for.s3.amazonaws.com/cat.jpg') no-repeat center
+    background-size: 100%
+    overflow: hidden
+    border-radius: .25rem .25rem 0 0
+    ul.info
+      position: absolute
+      bottom: .5rem
+      left: 1rem
+      line-height: 2rem
+      list-style: none
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      color: $white
+      font-size: 2rem
+    li
+      a
+        color: #fff
+    li.sub
+      font-size: 1rem
+nav.group
+  border-top: 1px solid #c4c4c4
+  background: #eee
+  display: flex
+  justify-content: space-between
+  ul
+    list-style: none
+    margin: 0
+    background: #eeeeee
+    display: flex
+    justify-content: flex-start
+    a
+      text-decoration: none
+      display: block
+      padding: .75rem 0
+      margin: 0 .5rem
+      font-size: 1rem
+      border-bottom-style: inset
+      border-bottom: 2px solid #eee
+      span
+        padding: .5rem
+      &:hover
+        cursor: pointer
+      &.active
+        color: darken($header-bg, 50%)
+        border-bottom-style: inset
+        border-bottom: 2px solid $blue
+ul.join
+  display: flex
+  align-self: center
+  padding-right: 1rem
+  button.blue
+    @include button($blue, $white)
+.info
+  font-size
+    1rem
+
+li.toggle-more
+  position: relative
+  
+#more-info
+  display: flex
+  flex-direction: column
+  position: absolute
+  top: 2.5rem
+  left: 0
+  margin-top: .25rem
+  background-color: $white
+  color: $gray
+  width: 250px
