@@ -2,16 +2,11 @@ section.group
   display: flex
   flex-direction: column
   width: 100%
-  border: 1px solid #c4c4c4
-  border-radius: .25rem .25rem 0 0
-  margin-bottom: 1rem
   header.group
+    visibility: hidden
     position: relative
-    height: 250px
     background: $white url('http://imgs-for.s3.amazonaws.com/cat.jpg') no-repeat center
     background-size: 100%
-    overflow: hidden
-    border-radius: .25rem .25rem 0 0
     ul.info
       position: absolute
       bottom: .5rem
@@ -29,14 +24,13 @@ section.group
     li.sub
       font-size: 1rem
 nav.group
-  border-top: 1px solid #c4c4c4
-  background: #eee
+  border-top: 1px solid $section-border
   display: flex
   justify-content: space-between
+  background: $white
   ul
     list-style: none
     margin: 0
-    background: #eeeeee
     display: flex
     justify-content: flex-start
     a
@@ -46,7 +40,7 @@ nav.group
       margin: 0 .5rem
       font-size: 1rem
       border-bottom-style: inset
-      border-bottom: 2px solid #eee
+      border-bottom: 2px solid $white
       span
         padding: .5rem
       &:hover
