@@ -17,10 +17,12 @@ section.group
       flex-direction: column
       justify-content: flex-start
       color: $white
-      font-size: 2rem
     li
       a
         color: #fff
+    li.main
+      font-size: 2rem
+      cursor: pointer
     li.sub
       font-size: 1rem
 nav.group
@@ -52,7 +54,7 @@ nav.group
 ul.join
   display: flex
   align-self: center
-  padding-right: 1rem
+  padding-right: 0.5rem
   button.blue
     @include button($blue, $white)
 .info
