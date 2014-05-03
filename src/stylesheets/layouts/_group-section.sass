@@ -9,7 +9,7 @@ section.group
     background-size: 100%
     ul.info
       position: absolute
-      bottom: .5rem
+      bottom: 0.5rem
       left: 1rem
       line-height: 2rem
       list-style: none
@@ -38,19 +38,23 @@ nav.group
     a
       text-decoration: none
       display: block
-      padding: .75rem 0
-      margin: 0 .5rem
+      padding: 0.75rem 0
+      margin: 0 0.5rem
       font-size: 1rem
       border-bottom-style: inset
       border-bottom: 2px solid $white
       span
-        padding: .5rem
+        padding: 0.5rem
       &:hover
         cursor: pointer
       &.active
         color: darken($header-bg, 50%)
         border-bottom-style: inset
         border-bottom: 2px solid $blue
+.truncate
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
 ul.join
   display: flex
   align-self: center
@@ -65,12 +69,14 @@ li.toggle-more
   position: relative
   
 #more-info
-  display: flex
   flex-direction: column
+  border: 1px solid $section-border
+  padding: 0.25rem
   position: absolute
-  top: 2.5rem
-  left: 0
-  margin-top: .25rem
+  top: 3.125rem
+  left: 0.5rem
   background-color: $white
   color: $gray
-  width: 250px
+  a
+    padding: 0
+    font-size: 0.75rem
