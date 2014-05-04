@@ -11,6 +11,7 @@
 - Image optimization
 - Error Notifications in Notification Center
 - sass precompiler
+- express
 
 If you've never used Node or npm before, you'll need to install Node.
 If you use homebrew, do:
