@@ -1,17 +1,18 @@
-#USG landing page for OrgSync
+#Gulp Broserify Starter
 ##Features
-  Dynamically render content for university organizations
-    1. User can view organization and join
-    2. Users have personal data and contact information
-    3. Organization has
-      - many users
-      - description
-      - forms and downloads
-      - calender of events (by date)
-      - Links
-      - admin (officers)
-      - news
-##Setup
+
+- Browserify (with browserify-shim)
+- Compass
+- CoffeeScript (with source mapping!)
+- jQuery (from npm)
+- Backbone (from npm)
+- Handlebars (as a backbone dependency)
+- Non common-js vendor code (like a jQuery plugin)
+- LiveReload
+- Static Server
+- Image optimization
+- Error Notifications in Notification Center
+- sass precompiler
 
 If you've never used Node or npm before, you'll need to install Node.
 If you use homebrew, do:
