@@ -6,7 +6,7 @@
 - CoffeeScript (with source mapping!)
 - jQuery (from npm)
 - jade
-- - LiveReload
+- LiveReload
 - Static Server
 - Image optimization
 - Error Notifications in Notification Center
