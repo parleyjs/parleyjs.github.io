@@ -1,11 +1,32 @@
-/* Authored Dependencies */
+// Vendor Dependencies
+///////////////////////////////////////////////////////
+@import compass
+
+// Authored Dependencies
+///////////////////////////////////////////////////////
 @import global/normalize
-@import global/mixins
 @import global/variables
-@import global/lists
 @import global/typography
-@import global/media-queries
+@import global/mixins
+@import global/extends
+
+// Patterns
+///////////////////////////////////////////////////////
+@import global/lists
+
+// Sections
+///////////////////////////////////////////////////////
 @import layouts/body
 @import layouts/header
-@import layouts/main
-@import layouts/group-section
+
+// shame
+///////////////////////////////////////////////////////
+@import global/shame
+
+
+// base stuff
+///////////////////////////////////////////////////////
+*
+  box-sizing: border-box
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
