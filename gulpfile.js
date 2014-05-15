@@ -1,30 +1,44 @@
-var gulp        = require('gulp'),
-    gutil       = require('gulp-util'),
-    sass        = require('gulp-sass'),
-    compass     = require('gulp-compass'),
+var gulp = require('gulp'),
+    gutil = require('gulp-util'),
+    sass = require('gulp-ruby-sass'),
+    prefix = require('gulp-autoprefixer'),
     minifyCSS   = require('gulp-minify-css'),
-    uglify      = require('gulp-uglify'),
-    jade        = require('gulp-jade'),
-    concat      = require('gulp-concat'),
-    livereload  = require('gulp-livereload'), // Livereload plugin needed: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei
-    tinylr      = require('tiny-lr'),
-    express     = require('express'),
-    app         = express(),
-    marked      = require('marked'),
-    path        = require('path'),
-    rename      = require('gulp-rename'),
-    browserify  = require('gulp-browserify'),
-    server      = tinylr();
+    jshint = require('gulp-jshint'),
+    uglify = require('gulp-uglify'),
+    jade = require('gulp-jade'),
+    concat = require('gulp-concat'),
+    livereload = require('gulp-livereload'), // Livereload plugin needed: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei
+    tinylr = require('tiny-lr'),
+    express = require('express'),
+    app = express(),
+    marked = require('marked'),
+    path = require('path'),
+    rename = require('gulp-rename'),
+    browserify = require('gulp-browserify'),
+    server = tinylr();
 
-gulp.task('compass', function() {
+//Error Catching
+///////////////////////////////////////////////
+function handleError(err) {
+    console.log(err.toString());
+    this.emit('end');
+}
+
+//Compile SCSS
+///////////////////////////////////////////////
+gulp.task('styles', function() {
     gulp.src('./src/stylesheets/*.sass')
-        .pipe(compass({
-            css: 'dist/stylesheets',
-            sass: 'src/stylesheets'
-        }))
-        .pipe(minifyCSS())
-        .pipe(gulp.dest('dist/stylesheets'))
-        .pipe( livereload( server ));
+      .pipe(sass({ quiet: true }))
+      .pipe(sass({ style: 'expanded' }))
+      .pipe(gulp.dest('dist/stylesheets'))
+      .pipe( livereload( server ));
+    // auto prefixing the world
+////////////////////////////////////////////////////
+    gulp.src('./dist/stylesheets/main.css')
+      .pipe(prefix('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+      .pipe(rename({suffix: '.min'}))
+      .pipe(minifyCSS())
+      .pipe(gulp.dest('./dist/stylesheets'));
 });
 
 gulp.task('coffee', function() {
@@ -59,13 +73,13 @@ gulp.task('watch', function () {
       return console.log(err);
     }
 
-    gulp.watch('src/stylesheets/*.sass',['compass']);
+    gulp.watch('src/stylesheets/*.sass',['styles']);
 
-    gulp.watch('src/stylesheets/*.sass',['compass']);
+    gulp.watch('src/stylesheets/*.sass',['styles']);
 
-    gulp.watch('src/stylesheets/global/*.sass',['compass']);
+    gulp.watch('src/stylesheets/global/*.sass',['styles']);
 
-    gulp.watch('src/stylesheets/layouts/*.sass',['compass']);
+    gulp.watch('src/stylesheets/layouts/*.sass',['styles']);
 
     gulp.watch('src/scripts/*.coffee',['coffee']);
 
@@ -75,4 +89,4 @@ gulp.task('watch', function () {
 });
 
 // Default Task
-gulp.task('default', ['coffee','compass','templates','express','watch']);
+gulp.task('default', ['coffee','styles','templates','express','watch']);
