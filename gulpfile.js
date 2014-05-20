@@ -30,15 +30,15 @@ gulp.task('styles', function() {
     gulp.src('./src/stylesheets/*.sass')
       .pipe(sass({ quiet: true }))
       .pipe(sass({ style: 'expanded' }))
-      .pipe(gulp.dest('dist/stylesheets'))
+      .pipe(gulp.dest('./stylesheets'))
       .pipe( livereload( server ));
     // auto prefixing the world
 ////////////////////////////////////////////////////
-    gulp.src('./dist/stylesheets/main.css')
+    gulp.src('./stylesheets/main.css')
       .pipe(prefix('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
       .pipe(rename({suffix: '.min'}))
       .pipe(minifyCSS())
-      .pipe(gulp.dest('./dist/stylesheets'));
+      .pipe(gulp.dest('./stylesheets'));
 });
 
 gulp.task('coffee', function() {
@@ -48,7 +48,7 @@ gulp.task('coffee', function() {
       extensions: ['.coffee']
     }))
     .pipe( rename('app.js') )
-    .pipe( gulp.dest('dist/scripts') )
+    .pipe( gulp.dest('./scripts') )
     .pipe( livereload( server ) );
 });
 
@@ -57,12 +57,12 @@ gulp.task('templates', function() {
     .pipe(jade({
       pretty: true
     }))
-    .pipe( gulp.dest('dist/') )
+    .pipe( gulp.dest('.') )
     .pipe( livereload( server ));
 });
 
 gulp.task('express', function() {
-  app.use(express.static(path.resolve('./dist')));
+  app.use(express.static(path.resolve('.')));
   app.listen(1337);
   gutil.log('Listening on port: 1337');
 });
