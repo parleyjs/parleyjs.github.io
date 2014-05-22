@@ -3,6 +3,7 @@
 
 // Authored Dependencies
 ///////////////////////////////////////////////////////
+@import global/icons
 @import global/normalize
 @import global/variables
 @import global/typography
@@ -20,14 +21,17 @@
 @import layouts/body
 @import layouts/header
 @import layouts/navigation
+@import layouts/content
 // shame
 ///////////////////////////////////////////////////////
 @import global/shame
 
 
-// base stuff
+// shamful stuff
 ///////////////////////////////////////////////////////
 *
   box-sizing: border-box
-  -webkit-box-sizing: border-box
-  -moz-box-sizing: border-box
+
+.boxed
+  max-width: 64rem
+  margin: 0 auto !important

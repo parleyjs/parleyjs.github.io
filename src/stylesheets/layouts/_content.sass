@@ -1,0 +1,30 @@
+main#content
+  background: $light-gray
+  width: 100%
+  position: relative
+  z-index: 99
+article.boxed
+  width: 64rem
+  margin: 0 auto  
+section#page
+  padding: 3.125rem 0 1.5625rem 0
+  margin-bottom: 1.5625rem
+  .feature-box
+    @extend .unstyledList
+    display: flex
+    flex-wrap: wrap
+    margin-bottom: 1.5625rem
+    i
+      color: $gray 
+.feature-box
+  >li
+    margin: 0
+    padding-right: 25px
+    width: 16rem
+    h2
+      font-size: 1.125rem
+      color: $dark-gray
+      &:before
+        padding-right: 0.5rem
+    p
+      color: $gray
