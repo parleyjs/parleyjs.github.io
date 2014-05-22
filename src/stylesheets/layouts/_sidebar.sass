@@ -1,0 +1,92 @@
+section.sidebar
+  z-index: 1000
+  padding: 0 1.5rem 3.875rem 1.5rem
+  position: absolute
+  top: 0
+  bottom: 0
+  background: $light-gray
+  border-right: 1px solid $gray-border
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  @media only screen and (max-width: 63.999rem) 
+    display: none
+  .label
+    font-size: 1.125rem
+    font-style: italic
+    font-weight: 500
+    text-transform: lowercase
+    font-family: $minion-pro
+  hr
+    border-bottom: 2px solid $gray !important
+    width: 1.125rem !important
+    margin-top: 0
+  
+nav.menu
+  .logo
+    display: flex
+    img
+      width: 11rem
+      padding-bottom: 2.5rem
+  ul
+    @extend .unstyledList
+    padding: 1rem 0 1.25rem 0
+    li
+      line-height: 1.75rem
+      a
+        font-family: $wigrum
+        font-size: 1.25rem
+        letter-spacing: .25rem
+        text-transform: uppercase
+        font-weight: 600
+        font-style: normal
+        text-decoration: none
+        color: inherit
+        &:hover
+          @include transition( all 0.8s )
+          color: $light-red
+          cursor: pointer
+nav.contact
+  font-family: $wigrum
+  font-weight: 500
+  font-style: normal
+  ul
+    @extend .unstyledList
+    padding: 1rem 0 1.25rem 0
+    li
+      cursor: pointer
+  hr
+    margin: 1rem 0 
+  li.social
+    margin-top: 1rem
+    display: flex
+    justify-content: space-between
+    width: 8rem
+    a:hover
+      @include transition( all 0.8s )
+      color: $light-red
+      cursor: pointer
+/*main section*/
+main.content
+  display: flex
+  flex-direction: column
+  flex: 1
+  padding: 1.25rem
+  @media only screen and (min-width: 64.000rem) 
+    margin-left: 17.5rem
+    padding: 3rem
+
+  h1
+    color: $dark-gray
+    font-size: 2.5rem
+    font-family: $wigrum
+    font-weight: 500
+    font-style: normal
+    @media only screen and (min-width: 64.000rem) 
+      font-size: 4rem
+    span
+      margin-left: 1rem
+      color: $gray
+  hr
+    border-bottom: 1px dotted $gray
+    margin-top: 0
