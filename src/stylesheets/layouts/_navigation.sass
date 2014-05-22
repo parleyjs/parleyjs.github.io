@@ -1,14 +1,12 @@
-nav#primary
+nav#primary, nav#secondary
   display: flex
   flex-direction: column
   justify-content: center
   min-width: 100%
-  background: $white
   position: relative
   border-bottom: 1px solid $light-gray
   box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.03)
   z-index: 999
-  height: 4.5625rem
   .boxed
     display: flex
     flex-direction: row
@@ -27,15 +25,17 @@ nav#primary
         text-transform: uppercase
         color: $gray
         padding: 0 0 0 1.5625rem
-
-#logo-head
+        &:hover, .current-item
+          color: $blue
+nav#primary
+  background: $white
+  height: 4.5625rem
+nav#secondary
+  height: 5.75rem
+#logo-head, #logo-footer
   transition: 250ms linear all
   display: flex
   flex-direction: column
   justify-content:center
   &:hover
     margin-top: -2px
-
-nav#primary ul li.current-item a,
-nav#primary ul li a:hover
-  color: #f4645f
