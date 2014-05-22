@@ -1,37 +1,129 @@
 
 <html>
   <head>
+    <title>= Parley.js | Chat App</title>
     <link rel="stylesheet" href="stylesheets/main.min.css"/>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- needs fallback for local-->
     <script src="scripts/app.js"></script>
   </head>
-</html>
-<body>
-  <div id="wrapper">
-    <header>
-      <div class="wrapper">
-        <div class="logo"><a>PARLEY JS</a></div>
-        <nav>
-          <ul class="main">
-            <li><a>SOMETHING</a></li>
-            <li><a>SOMETHING</a></li>
-            <li><a>SOMETHING</a></li>
-            <li><a>SOMETHING</a></li>
+  <body>
+    <div id="wrapper">
+      <header id="header" role="header">
+        <div class="boxed">
+          <div id="tagline" class="animated bounceInUp">
+            <h1>The open source chat client for everyone.</h1>
+            <h2>easily implemented into an existing site or application</h2>
+          </div><a href="#" class="button large animated shake">Quickstart<a href="#" class="button large animated shake">Learn More</a><a href="#" class="button large animated shake">See Demos</a></a>
+          <div id="header_image" style="background: url(http://www.fillmurray.com/g/1025/385) top center no-repeat;" class="animated fadeIn"></div>
+        </div>
+      </header>
+      <nav id="primary">
+        <div class="boxed">
+          <div id="logo-head"><a href="//parleyjs.github.io.com"><img src="#" alt="Parley JS"/></a></div>
+          <ul>
+            <li class="current-item"><a href="#">Welcome</a></li>
+            <li><a href="#">Demos</a></li>
+            <li><a href="#" title="Documentation">Documentation</a></li>
+            <li><a href="//www.npmjs.org/package/parleyjs" title="Parley on NPM">NPM</a></li>
+            <li><a href="//github.com/parleyjs/parley.js" title="Github">Github</a></li>
+            <li><a href="#" title="Parley Issues">Issues</a></li>
+            <li><a href="//twitter.com/parleyjs" title="parley on Twitter">Twitter</a></li>
           </ul>
-          <div class="menu-icon">
-            <nav><a id="menu-toggle" href="#" class="button"><span class="menu-bar bar1"></span><span class="menu-bar bar2"></span><span class="menu-bar bar3"></span></a></nav>
-          </div>
-        </nav>
+        </div>
+      </nav>
+      <div id="content">
+        <section id="page">
+          <article class="boxed">
+            <ul class="feature-box nolist">
+              <li class="one_quarter">
+                <h2><i class="icon-something"></i><a title="Lorem ipsum dolor" href="#">Lorem ipsum dolor</a></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisl non rutrum lacinia, nibh neque vehicula odio.</p>
+              </li>
+              <li class="one_quarter">
+                <h2><i class="icon-something"></i><a title="Lorem ipsum dolor" href="#">Lorem ipsum dolor</a></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisl non rutrum lacinia, nibh neque vehicula odio.</p>
+              </li>
+              <li class="one_quarter">
+                <h2><i class="icon-something"></i><a title="Lorem ipsum dolor" href="#">Lorem ipsum dolor</a></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisl non rutrum lacinia, nibh neque vehicula odio.</p>
+              </li>
+              <li class="one_quarter">
+                <h2><i class="icon-something"></i><a title="Lorem ipsum dolor" href="#">Lorem ipsum dolor</a></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisl non rutrum lacinia, nibh neque vehicula odio.</p>
+              </li>
+              <li class="one_quarter">
+                <h2><i class="icon-something"></i><a title="PLorem ipsum dolor" href="#">Lorem ipsum dolor</a></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisl non rutrum lacinia, nibh neque vehicula odio.</p>
+              </li>
+              <li class="one_quarter">
+                <h2><i class="icon-something"></i><a title="CLorem ipsum dolor" href="#">Lorem ipsum dolor</a></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisl non rutrum lacinia, nibh neque vehicula odio.</p>
+              </li>
+              <li class="one_quarter">
+                <h2><i class="icon-something"></i><a title="Lorem ipsum dolor" href="#">Lorem ipsum dolor</a></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisl non rutrum lacinia, nibh neque vehicula odio.</p>
+              </li>
+              <li class="one_quarter">
+                <h2><i class="icon-something"></i><a title="Lorem ipsum dolor" href="#">Lorem ipsum dolor</a></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisl non rutrum lacinia, nibh neque vehicula odio.</p>
+              </li>
+            </ul>
+          </article>
+        </section>
       </div>
-    </header>
-    <nav class="mobile">
-      <ul>
-        <li><a>SOMETHING</a></li>
-        <li><a>SOMETHING</a></li>
-        <li><a>SOMETHING</a></li>
-        <li><a>SOMETHING</a></li>
-      </ul>
-    </nav>
-  </div>
-</body>
+      <section id="quotes">
+        <article class="boxed">
+          <ul id="quote" class="nolist textcenter aligncenter">
+            <li class="animated flipInX">
+              <div class="quote">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod.</p>
+              </div>
+              <div class="person">Zoe Bartlet</div>
+            </li>
+            <li class="animated flipInX">
+              <div class="quote">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod.</p>
+              </div>
+              <div class="person">Charlie Daniels</div>
+            </li>
+            <li class="animated flipInX">
+              <div class="quote">
+                <p>Lorem ipsum dolor sit amet.</p>
+              </div>
+              <div class="person">Sam Seaborn</div>
+            </li>
+            <li class="animated flipInX">
+              <div class="quote">
+                <p>Lorem ipsum dolor sit amet!</p>
+              </div>
+              <div class="person">Christopher Bartlet</div>
+            </li>
+          </ul>
+        </article>
+      </section>
+      <footer id="foot" class="textcenter">
+        <div class="boxed">
+          <!-- nav-->
+          <nav id="secondary">
+            <div id="logo-foot"><a href="#"><img src="#" alt="parley js"/></a></div>
+            <ul>
+              <li class="current-item"><a href="#">Welcome</a></li>
+              <li><a href="#">Demos</a></li>
+              <li><a href="#" title="Documentation">Documentation</a></li>
+              <li><a href="https://www.npmjs.org/package/parleyjs" title="npm">npm</a></li>
+              <li><a href="//github.com/parleyjs/parleyjs" title="Github">Github</a></li>
+              <li><a href="#" title="forums">Forums</a></li>
+              <li><a href="//twitter.com/parleyjs" title="Parley on Twitter">Twitter</a></li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+      <section id="copyright" class="textcenter">
+        <div class="boxed">
+          <div class="animated slideInLeft">Parley js is a trademark of Visualbound. Copyright © 2014<a href="http://twitter.com/visualbound" title="Visualbound" target="_blank">Visualbound</a>. Website built with ♥<a href="//mattmark.me" title="Matt Mark" target="_blank">Matt Mark</a>.</div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

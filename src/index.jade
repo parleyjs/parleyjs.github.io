@@ -1,38 +1,28 @@
 html
-  head
-    link(rel="stylesheet", href="stylesheets/main.min.css")
-    script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js")
-    // needs fallback for local
-    script(src="scripts/app.js")
-body
-  #wrapper
-    header
-      .wrapper
-        .logo
-          a PARLEY JS
-        nav
-          ul.main
-            li
-              a SOMETHING
-            li
-              a SOMETHING
-            li
-              a SOMETHING
-            li
-              a SOMETHING
-          .menu-icon
-            nav
-              a#menu-toggle.button(href='#')
-                span.menu-bar.bar1
-                span.menu-bar.bar2
-                span.menu-bar.bar3
-    nav.mobile
-      ul
-        li
-          a SOMETHING
-        li
-          a SOMETHING
-        li
-          a SOMETHING
-        li
-          a SOMETHING
+  include includes/head
+  body
+    #wrapper
+      //- header
+      header#header(role='header')
+        include includes/header
+      //- end header
+      //- navigation
+      nav#primary
+        include includes/nav
+      //- end navigation
+      //- content
+      #content
+        include includes/content
+      //- end content
+      //- section for quotes
+      section#quotes
+        include includes/quotes
+      //- end section for quotes
+      //- footer
+      footer#foot.textcenter
+        include includes/footer
+      //- end footer
+      //- copyright
+      section#copyright.textcenter
+        include includes/copyright
+        
