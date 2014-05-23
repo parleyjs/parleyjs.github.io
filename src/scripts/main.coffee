@@ -1,17 +1,12 @@
 jQuery(document).ready ($) ->
   
-  # select text inputs
-  
-  # toplink
-  
-  # sticky nav
-  
-  # make sure nav stays full width on resize
-  
-  # parallax header
-  
-  # footer z-index fix for ie
-  
+  # quotes scroll
+  bgscroll = ->
+    current -= 1
+    $("#quotes").css "backgroundPosition", (if (direction is "h") then current + "px 0" else "0 " + current + "px")
+    return
+
+  $("#top").hide()
   $(window).scroll ->
     if $(window).scrollTop() >= 600
       $("#top").fadeIn 500
@@ -21,13 +16,14 @@ jQuery(document).ready ($) ->
 
   nav = $("nav#primary")
   content = $("#content")
+  docs = $("#docs-content")
   navHomeY = nav.offset().top
   isFixed = false
   $w = $(window)
   $w.scroll ->
     scrollTop = $w.scrollTop()
-    oughtBeFixd = scrollTop > navHomeY
-    if oughtBeFixd and not isFixed
+    shouldBeFixed = scrollTop > navHomeY
+    if shouldBeFixed and not isFixed
       nav.css
         position: "fixed"
         width: "100%"
@@ -37,7 +33,7 @@ jQuery(document).ready ($) ->
       content.css paddingTop: "75px"
       docs.css paddingTop: "27px"
       isFixed = true
-    else if not oughtBeFixd and isFixed
+    else if not shouldBeFixed and isFixed
       nav.css
         position: "relative"
         width: "100%"
@@ -72,3 +68,4 @@ jQuery(document).ready ($) ->
   
   # prettyprint
   $("pre").addClass "prettyprint"
+  

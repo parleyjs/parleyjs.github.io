@@ -1,6 +1,11 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 jQuery(document).ready(function($) {
-  var $w, content, current, direction, isFixed, nav, navHomeY, scrollSpeed;
+  var $w, bgscroll, content, current, direction, docs, isFixed, nav, navHomeY, scrollSpeed;
+  bgscroll = function() {
+    current -= 1;
+    $("#quotes").css("backgroundPosition", (direction === "h" ? current + "px 0" : "0 " + current + "px"));
+  };
+  $("#top").hide();
   $(window).scroll(function() {
     if ($(window).scrollTop() >= 600) {
       $("#top").fadeIn(500);
@@ -10,14 +15,15 @@ jQuery(document).ready(function($) {
   });
   nav = $("nav#primary");
   content = $("#content");
+  docs = $("#docs-content");
   navHomeY = nav.offset().top;
   isFixed = false;
   $w = $(window);
   $w.scroll(function() {
-    var oughtBeFixd, scrollTop;
+    var scrollTop, shouldBeFixed;
     scrollTop = $w.scrollTop();
-    oughtBeFixd = scrollTop > navHomeY;
-    if (oughtBeFixd && !isFixed) {
+    shouldBeFixed = scrollTop > navHomeY;
+    if (shouldBeFixed && !isFixed) {
       nav.css({
         position: "fixed",
         width: "100%",
@@ -31,7 +37,7 @@ jQuery(document).ready(function($) {
         paddingTop: "27px"
       });
       isFixed = true;
-    } else if (!oughtBeFixd && isFixed) {
+    } else if (!shouldBeFixed && isFixed) {
       nav.css({
         position: "relative",
         width: "100%",
