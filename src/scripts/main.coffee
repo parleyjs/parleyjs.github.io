@@ -1,31 +1,74 @@
-# dropdown menu
-$(document).ready ->
-  windowWidth = $(window).width()
-  ## Hide mobile menu on doc ready
-  $("nav.mobile").addClass "hide"
-  ## hide main nav if mobile / tablet
-  $("nav ul.main").addClass "hide"
-  ## hide toggle nav if desktop
-  ###$(".menu-icon").addClass "hide" if windowWidth >= 768###
-  # Set up the toggle.
-  $("#menu-toggle").on "click", ->
-    $("ul.main").toggleClass "hide" if windowWidth >= 768
-    $("nav.mobile").toggleClass "hide" if windowWidth <= 768
-  ## on window resize functions
-  $(window).resize ->
-    windowWidth = $(window).width()
-    $("nav ul.main").addClass "hide"  if windowWidth <= 768
-    $("nav.mobile").addClass "hide" if windowWidth >= 768
-    
-    
-  ###menu toggle animation(facebook style)###
-  menu = document.getElementById("menu-toggle")
-  toggled = false
-  menu.addEventListener "click", (->
-    unless toggled
-      @className = @className + " toggled"
-      toggled = true
+jQuery(document).ready ($) ->
+  
+  # select text inputs
+  
+  # toplink
+  
+  # sticky nav
+  
+  # make sure nav stays full width on resize
+  
+  # parallax header
+  
+  # footer z-index fix for ie
+  
+  $(window).scroll ->
+    if $(window).scrollTop() >= 600
+      $("#top").fadeIn 500
     else
-      @className = @className.replace(/\b\stoggled\b/, "")
-      toggled = false
-  ), false
+      $("#top").fadeOut 500
+    return
+
+  nav = $("nav#primary")
+  content = $("#content")
+  navHomeY = nav.offset().top
+  isFixed = false
+  $w = $(window)
+  $w.scroll ->
+    scrollTop = $w.scrollTop()
+    oughtBeFixd = scrollTop > navHomeY
+    if oughtBeFixd and not isFixed
+      nav.css
+        position: "fixed"
+        width: "100%"
+        top: 0
+        opacity: 0.9
+
+      content.css paddingTop: "75px"
+      docs.css paddingTop: "27px"
+      isFixed = true
+    else if not oughtBeFixd and isFixed
+      nav.css
+        position: "relative"
+        width: "100%"
+        opacity: 1
+
+      content.css paddingTop: "0"
+      docs.css paddingTop: "27px"
+      isFixed = false
+    return
+
+  $(window).resize ->
+    $("nav#primary").css width: "100%"
+    return
+
+  $(window).scroll ->
+    scroll = $(window).scrollTop()
+    slowScroll = scroll / 2
+    $("#header").css transform: "translateY(" + slowScroll + "px)"
+    return
+
+  $(window).scroll ->
+    if $(window).scrollTop() >= 400
+      $("#copyright").css "z-index": 22
+    else
+      $("#copyright").css "z-index": 1
+    return
+
+  scrollSpeed = 80
+  current = 0
+  direction = "h"
+  setInterval bgscroll, scrollSpeed
+  
+  # prettyprint
+  $("pre").addClass "prettyprint"
