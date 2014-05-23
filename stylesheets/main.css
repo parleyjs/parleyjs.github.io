@@ -94,7 +94,7 @@ hr {
 pre, code {
   font-family: source-code-pro, monospace;
   font-size: 0.8125rem;
-  background: transparent !important;
+  background: transparent;
   padding: 0;
   border-radius: none;
 }
@@ -218,6 +218,69 @@ h2 {
 #callto .button {
   animation-delay: 5s;
   animation-duration: 1s;
+}
+
+.code-editor {
+  display: flex;
+  flex-direction: row;
+  max-width: 64rem;
+  height: 20rem;
+  margin-top: 4rem;
+  position: relative;
+  border-radius: 5px 5px 0 0;
+}
+
+.code-editor::before {
+  content: "";
+  z-index: 20;
+  background: #ebf2f4;
+  padding-top: 6px;
+  position: absolute;
+  top: -1.875rem;
+  left: 0;
+  right: 0;
+  height: 1.875rem;
+  border-radius: 5px 5px 0 0;
+  content: "";
+  z-index: 1;
+}
+
+span.control::before {
+  content: "";
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  z-index: 30;
+  padding: 6px;
+  border-radius: 20px;
+}
+
+span.control:nth-child(1):before {
+  margin-left: 15px;
+  background-color: #e93535;
+}
+
+span.control:nth-child(2):before {
+  margin-left: 35px;
+  background-color: #fff6bd;
+}
+
+span.control:nth-child(3):before {
+  margin-left: 55px;
+  background-color: #39c062;
+}
+
+pre.numbers {
+  display: flex;
+  flex-direction: column;
+  background: #f5f8fa;
+  margin: 0;
+}
+
+code.css {
+  display: flex-direction;
+  flex: 1;
+  background: white;
 }
 
 nav#primary, nav#secondary {
