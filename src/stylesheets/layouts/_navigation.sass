@@ -25,7 +25,7 @@ nav#primary, nav#secondary
         text-transform: uppercase
         color: $gray
         padding: 0 0 0 1.5625rem
-        &:hover, .current-item
+        &:hover
           color: $blue
 nav#primary
   background: $white
@@ -39,3 +39,6 @@ nav#secondary
   justify-content:center
   &:hover
     margin-top: -2px
+
+nav#primary ul li.current-item a
+  color: $blue
