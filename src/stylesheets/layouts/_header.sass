@@ -1,23 +1,11 @@
 #header
   background: $light-blue
-  height: 6.25rem
-  text-align: left
+  text-align: center
   overflow: hidden
   position: relative
   z-index: 20
-  @media (min-width: 64rem)
-    background: $gray
-    height: 675px
-    text-align: center
-    overflow: hidden
+  .boxed
     position: relative
-    z-index: 20
-    #header_image
-      width: 1025px
-      height: 385px
-      margin: 0 auto
-      background: $white
-      border-radius: 0.25rem 0.25rem 0 0 
 
 #tagline
   width: 100%
@@ -25,32 +13,37 @@
   padding-top: 1rem
   position: relative
   z-index: 25
-  @media (min-width: 64rem)
+  padding: 0.5rem 1rem
 
   h1
     font: inherit
+    font-size: 1.5rem
     font-weight: 100
     letter-spacing: 1.5px
     text-transform: uppercase
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2)
     margin-bottom: 0.3125rem
-    @media (min-width: 64rem)
+    @media only screen and (min-width : 768px)
+      padding-top: 4.25rem
+      font-size: 1.75rem
+    @media only screen and (min-width : 1024px)
       padding-top: 6.25rem
       font-size: 2.5rem
   h2
     font: inherit
-    font-size: 20px
     color: $dark-gray
     text-transform: uppercase
     font-weight: 200
     letter-spacing: 1.5px
-    line-height: 0.75rem
-    @media (min-width: 64rem)
+    @media only screen and (min-width : 768px)
+      font-size: 1.25rem
+    @media only screen and (min-width : 1024)
       font-size: 1.5rem
+      line-height: 0.75rem
 #callto
   width: 100%
   margin: 0 auto
-  padding: 1.5625rem 0 0 0
+  padding: 2.8625rem 0 0 0
   position: relative
   z-index: 25
   > a

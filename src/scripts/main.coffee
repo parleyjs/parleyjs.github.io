@@ -46,7 +46,7 @@ jQuery(document).ready ($) ->
 
   $(window).resize ->
     $("nav#primary").css width: "100%"
-    return
+    setHeight()
 
   $(window).scroll ->
     scroll = $(window).scrollTop()
@@ -66,6 +66,21 @@ jQuery(document).ready ($) ->
   direction = "h"
   setInterval bgscroll, scrollSpeed
   
+  ## set height of .header
+  setHeight = ->
+    windowHeight = $(window).innerHeight()
+    navHeight = $("#primary").innerHeight()
+    headerHeight = windowHeight - navHeight
+    codeWidth = $(".code-editor").innerWidth()
+    console.log windowHeight
+    console.log navHeight
+    console.log headerHeight
+    $("#header .boxed").css "min-height", headerHeight
+    $("#primary .boxed").css "min-width", codeWidth
+    return
+  setHeight()
   # prettyprint
   $("pre").addClass "prettyprint"
-  
+
+
+

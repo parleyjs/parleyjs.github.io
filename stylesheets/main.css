@@ -130,41 +130,28 @@ h2 {
 
 #header {
   background: #3c82b4;
-  height: 6.25rem;
-  text-align: left;
+  text-align: center;
   overflow: hidden;
   position: relative;
   z-index: 20;
 }
 
-@media (min-width: 64rem) {
-  #header {
-    background: #999999;
-    height: 675px;
-    text-align: center;
-    overflow: hidden;
-    position: relative;
-    z-index: 20;
-  }
-
-  #header #header_image {
-    width: 1025px;
-    height: 385px;
-    margin: 0 auto;
-    background: white;
-    border-radius: 0.25rem 0.25rem 0 0;
-  }
+#header .boxed {
+  position: relative;
 }
+
 #tagline {
   width: 100%;
   margin: 0 auto;
   padding-top: 1rem;
   position: relative;
   z-index: 25;
+  padding: 0.5rem 1rem;
 }
 
 #tagline h1 {
   font: inherit;
+  font-size: 1.5rem;
   font-weight: 100;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -172,7 +159,13 @@ h2 {
   margin-bottom: 0.3125rem;
 }
 
-@media (min-width: 64rem) {
+@media only screen and (min-width: 768px) {
+  #tagline h1 {
+    padding-top: 4.25rem;
+    font-size: 1.75rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
   #tagline h1 {
     padding-top: 6.25rem;
     font-size: 2.5rem;
@@ -180,23 +173,27 @@ h2 {
 }
 #tagline h2 {
   font: inherit;
-  font-size: 20px;
   color: #384047;
   text-transform: uppercase;
   font-weight: 200;
   letter-spacing: 1.5px;
-  line-height: 0.75rem;
 }
 
-@media (min-width: 64rem) {
+@media only screen and (min-width: 768px) {
+  #tagline h2 {
+    font-size: 1.25rem;
+  }
+}
+@media only screen and (min-width: 1024) {
   #tagline h2 {
     font-size: 1.5rem;
+    line-height: 0.75rem;
   }
 }
 #callto {
   width: 100%;
   margin: 0 auto;
-  padding: 1.5625rem 0 0 0;
+  padding: 2.8625rem 0 0 0;
   position: relative;
   z-index: 25;
 }
@@ -211,11 +208,22 @@ h2 {
   animation-duration: 1s;
 }
 
+.code-wrapper {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+@media only screen and (max-width: 480px) {
+  .code-editor {
+    display: none !important;
+  }
+}
 .code-editor {
   display: flex;
   flex-direction: row;
-  max-width: 64rem;
-  height: 20rem;
   margin-top: 4rem;
   position: relative;
   border-radius: 5px 5px 0 0;
@@ -291,13 +299,17 @@ nav#primary .boxed, nav#secondary .boxed {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 64rem;
-  margin: 0 auto;
 }
 
 nav#primary ul, nav#secondary ul {
   display: flex;
   flex-direction: row;
+}
+
+nav#primary ul > li, nav#secondary ul > li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 nav#primary ul > li a, nav#secondary ul > li a {
@@ -320,6 +332,7 @@ nav#primary {
 
 nav#secondary {
   height: 5.75rem;
+  border-bottom: 1px solid #262626;
 }
 
 #logo-head, #logo-footer {

@@ -11,13 +11,14 @@ nav#primary, nav#secondary
     display: flex
     flex-direction: row
     justify-content: space-between
-    width: 64rem
-    margin: 0 auto
   ul
     @extend .unstyledList
     display: flex
     flex-direction: row
     > li
+      display: flex
+      flex-direction: column
+      justify-content: center
       a
         font-size: 0.75rem
         font-weight: 600
@@ -32,6 +33,7 @@ nav#primary
   height: 4.5625rem
 nav#secondary
   height: 5.75rem
+  border-bottom: 1px solid $black
 #logo-head, #logo-footer
   transition: 250ms linear all
   display: flex

@@ -1,6 +1,6 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 jQuery(document).ready(function($) {
-  var $w, bgscroll, content, current, direction, docs, isFixed, nav, navHomeY, scrollSpeed;
+  var $w, bgscroll, content, current, direction, docs, isFixed, nav, navHomeY, scrollSpeed, setHeight;
   bgscroll = function() {
     current -= 1;
     $("#quotes").css("backgroundPosition", (direction === "h" ? current + "px 0" : "0 " + current + "px"));
@@ -56,6 +56,7 @@ jQuery(document).ready(function($) {
     $("nav#primary").css({
       width: "100%"
     });
+    return setHeight();
   });
   $(window).scroll(function() {
     var scroll, slowScroll;
@@ -80,6 +81,19 @@ jQuery(document).ready(function($) {
   current = 0;
   direction = "h";
   setInterval(bgscroll, scrollSpeed);
+  setHeight = function() {
+    var codeWidth, headerHeight, navHeight, windowHeight;
+    windowHeight = $(window).innerHeight();
+    navHeight = $("#primary").innerHeight();
+    headerHeight = windowHeight - navHeight;
+    codeWidth = $(".code-editor").innerWidth();
+    console.log(windowHeight);
+    console.log(navHeight);
+    console.log(headerHeight);
+    $("#header .boxed").css("min-height", headerHeight);
+    $("#primary .boxed").css("min-width", codeWidth);
+  };
+  setHeight();
   return $("pre").addClass("prettyprint");
 });
 

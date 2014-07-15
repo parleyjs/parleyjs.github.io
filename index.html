@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>= Parley.js | Chat App</title>
-    <link rel="stylesheet" href="stylesheets/main.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="{{ site.description }}">
+    <link rel="icon" href="http://imagineux.s3.amazonaws.com/img/favicon.ico">
+    <link rel="stylesheet" href="stylesheets/main.css">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>
-    <!-- needs fallback for local-->
     <script src="scripts/app.js"></script>
   </head>
   <body onload="prettyPrint()">
@@ -17,36 +21,26 @@
             <h2>easily implemented into an existing site or application</h2>
           </div>
           <div id="callto"><a href="#" class="button">Quickstart</a><a href="#" class="button">Learn More</a><a href="#" class="button">See Demos</a></div>
-          <div class="code-editor"><span class="control"></span><span class="control"></span><span class="control"></span>
-            <pre class="numbers linenums"><code class="css">describe('Connection', function(){
+          <div class="code-wrapper">
+            <div class="code-editor"><span class="control"></span><span class="control"></span><span class="control"></span>
+              <pre class="numbers linenums"><code id="inSert" class="js">describe('Connection', function(){
   var db = new Connection
     , tobi = new User('tobi')
     , loki = new User('loki')
     , jane = new User('jane');
-
   beforeEach(function(done){
     db.clear(function(err){
       if (err) return done(err);
       db.save([tobi, loki, jane], done);
     });
-  })
-
-  describe('#find()', function(){
-    it('respond with matching records', function(done){
-      db.find({ type: 'User' }, function(err, res){
-        if (err) return done(err);
-        res.should.have.length(3);
-        done();
-      })
-    })
-  })
-})</code></pre>
+  })</code></pre>
+            </div>
           </div>
         </div>
       </header>
       <nav id="primary">
         <div class="boxed">
-          <div id="logo-head"><a href="//parleyjs.github.io.com"><img src="#" alt="Parley JS"></a></div>
+          <div id="logo-head"><a href="//parleyjs.github.io.com"><img src="http://parley-js.s3.amazonaws.com/logo-head.png" alt="Parley JS"></a></div>
           <ul>
             <li class="current-item"><a href="#">Welcome</a></li>
             <li><a href="#">Demos</a></li>
@@ -131,7 +125,7 @@
       <footer id="footer">
         <nav id="secondary">
           <div class="boxed">
-            <div id="logo-footer"><a href="//parleyjs.github.io.com"><img src="#" alt="Parley JS"></a></div>
+            <div id="logo-footer"><a href="//parleyjs.github.io.com"><img src="http://parley-js.s3.amazonaws.com/logo-head.png" alt="Parley JS"></a></div>
             <ul>
               <li class="current-item"><a href="#">Welcome</a></li>
               <li><a href="#">Demos</a></li>
