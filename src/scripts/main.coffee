@@ -4,14 +4,14 @@ jQuery(document).ready ($) ->
     windowHeight = $(window).innerHeight()
     navHeight = $("#primary").innerHeight()
     headerHeight = windowHeight - navHeight
-    codeWidth = $(".code-editor").innerWidth()
-    console.log windowHeight
-    console.log navHeight
-    console.log headerHeight
     $("#header .boxed").css "min-height", headerHeight
-    $("#primary .boxed").css "min-width", codeWidth
     return
   setHeight()
+  setWidth = ->
+    codeWidth = $(".code-editor").innerWidth()
+    $("#primary .boxed").css "min-width", codeWidth
+    return
+  setWidth()
   # quotes scroll
   bgscroll = ->
     current -= 1
@@ -60,6 +60,7 @@ jQuery(document).ready ($) ->
   $(window).resize ->
     $("nav#primary").css width: "100%"
     navHomeY = nav.offset().top
+    setWidth()
 
 
   $(window).scroll ->
