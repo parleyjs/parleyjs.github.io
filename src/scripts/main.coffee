@@ -1,5 +1,17 @@
 jQuery(document).ready ($) ->
-  
+  ## set height of .header
+  setHeight = ->
+    windowHeight = $(window).innerHeight()
+    navHeight = $("#primary").innerHeight()
+    headerHeight = windowHeight - navHeight
+    codeWidth = $(".code-editor").innerWidth()
+    console.log windowHeight
+    console.log navHeight
+    console.log headerHeight
+    $("#header .boxed").css "min-height", headerHeight
+    $("#primary .boxed").css "min-width", codeWidth
+    return
+  setHeight()
   # quotes scroll
   bgscroll = ->
     current -= 1
@@ -18,6 +30,7 @@ jQuery(document).ready ($) ->
   content = $("#content")
   docs = $("#docs-content")
   navHomeY = nav.offset().top
+  console.log navHomeY
   isFixed = false
   $w = $(window)
   $w.scroll ->
@@ -46,7 +59,8 @@ jQuery(document).ready ($) ->
 
   $(window).resize ->
     $("nav#primary").css width: "100%"
-    setHeight()
+    navHomeY = nav.offset().top
+
 
   $(window).scroll ->
     scroll = $(window).scrollTop()
@@ -65,20 +79,6 @@ jQuery(document).ready ($) ->
   current = 0
   direction = "h"
   setInterval bgscroll, scrollSpeed
-  
-  ## set height of .header
-  setHeight = ->
-    windowHeight = $(window).innerHeight()
-    navHeight = $("#primary").innerHeight()
-    headerHeight = windowHeight - navHeight
-    codeWidth = $(".code-editor").innerWidth()
-    console.log windowHeight
-    console.log navHeight
-    console.log headerHeight
-    $("#header .boxed").css "min-height", headerHeight
-    $("#primary .boxed").css "min-width", codeWidth
-    return
-  setHeight()
   # prettyprint
   $("pre").addClass "prettyprint"
 
